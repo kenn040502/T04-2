@@ -1,105 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Appliance Energy • Australia</title>
+  <title>COS30045 – Appliance Energy (T03)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="images/PowerIcon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header / Top Nav -->
-  <header class="site-header">
-    <nav class="topnav" aria-label="Primary">
-      <button id="logoBtn" class="logo-btn" aria-label="Go to Home">
-        <img src="images/PowerIcon.png" alt="Power logo" class="logo" />
-        <span class="brand">Appliance Energy</span>
-      </button>
-
-      <ul class="nav-links">
-        <li><a data-route="home" class="nav-link is-active" href="#home">Home</a></li>
-        <li><a data-route="televisions" class="nav-link" href="#televisions">Televisions</a></li>
-        <li><a data-route="about" class="nav-link" href="#about">About Us</a></li>
-      </ul>
+  <!-- Top Nav -->
+  <header class="topbar">
+    <a href="#home" class="brand" aria-label="Go to Home">
+      <img src="images/PowerIcon.png" alt="" class="logo" />
+      <span>Appliance Energy</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#home" data-route>Home</a>
+      <a href="#televisions" data-route>Televisions</a>
+      <a href="#about" data-route>About Us</a>
     </nav>
   </header>
 
-  <!-- Main Content (SPA sections) -->
-  <main id="app" tabindex="-1">
+  <!-- Pages -->
+  <main>
     <!-- Home -->
     <section id="page-home" class="page is-visible" aria-labelledby="home-title">
-      <h1 id="home-title">Energy Smarts for Aussie Households ⚡</h1>
+      <h1 id="home-title">Welcome</h1>
       <p class="lede">
-        Welcome! This site demonstrates how <strong>appliance energy consumption</strong>
-        can be explored in the Australian market — starting with televisions.
+        This small site communicates insights from a TV energy consumption dataset for a general audience of
+        Australian households. Use the <strong>Televisions</strong> page for charts and takeaways.
       </p>
-      <div class="cards">
-        <article class="card">
-          <h2>Why it matters</h2>
-          <p>
-            Appliances use a big share of household electricity. Choosing
-            efficient models lowers bills and emissions.
-          </p>
-        </article>
-        <article class="card">
-          <h2>How we’ll show it</h2>
-          <p>
-            We’ll use datasets from <em>data.gov.au</em> to show TV sizes,
-            technologies, star ratings, and power use.
-          </p>
-        </article>
-        <article class="card">
-          <h2>What’s coming</h2>
-          <p>
-            After cleaning data in KNIME (Task T01(b)), we’ll publish
-            visualisations here under the Televisions page.
-          </p>
-        </article>
+      <div class="panel">
+        <h2>What’s on this site?</h2>
+        <ul class="bullets">
+          <li>Simple visual story about TV energy consumption</li>
+          <li>Clear audience and questions</li>
+          <li>Lightweight charts with short explanations</li>
+        </ul>
       </div>
     </section>
 
     <!-- Televisions -->
     <section id="page-televisions" class="page" aria-labelledby="tv-title">
-      <h1 id="tv-title">Televisions • Energy Overview</h1>
+      <h1 id="tv-title">Televisions • Energy Insights</h1>
       <p class="lede">
-        Placeholder content for Australian television energy usage.
-        Charts and visualisations will be added after Task T01(b).
+        Audience: <strong>Households buying a new TV</strong>. These visuals answer: (1) Which screen technologies are
+        common? (2) For 55″ models, how do technologies compare on annual kWh? (3) What background do spot prices provide?
       </p>
+
+      <!-- Technology share -->
       <div class="panel">
-        <h2>Planned Visualisations</h2>
-        <ul class="bullets">
-          <li>Screen technologies by frequency (LCD/LED, OLED, etc.)</li>
-          <li>Screen size distribution (bucketed to common sizes)</li>
-          <li>Average power by technology and brand</li>
-          <li>Screen size vs power usage</li>
-          <li>Star rating vs average screen size</li>
-        </ul>
-        <div id="viz-mount" class="viz-mount">
-          <div class="viz-placeholder">Charts will appear here soon.</div>
+        <h2>Screen Technology Mix (All Sizes)</h2>
+        <p class="viz-caption">Distribution of available TV models by technology (context for what you’ll see in stores).</p>
+        <div class="viz-mount">
+          <canvas id="chartTechShare" aria-label="Technology share of TV models" role="img"></canvas>
         </div>
+        <p class="takeaway"><strong>Takeaway:</strong> LED/LCD usually dominates availability; OLED/QLED/Mini-LED appear in smaller shares.</p>
+      </div>
+
+      <!-- 55 inch bar -->
+      <div class="panel">
+        <h2>Average Annual Energy – 55″ TVs by Technology</h2>
+        <p class="viz-caption">Holding size constant (55″) lets us compare technologies fairly (kWh/year).</p>
+        <div class="viz-mount">
+          <canvas id="chart55kWh" aria-label="Average annual energy for 55 inch TVs by technology" role="img"></canvas>
+        </div>
+        <p class="takeaway"><strong>Takeaway:</strong> Expect roughly <em>X–Y kWh/year</em> depending on tech; over years this affects bills.</p>
+      </div>
+
+      <!-- Spot price line -->
+      <div class="panel">
+        <h2>Context: Average Spot Power Prices (2018–2024)</h2>
+        <p class="viz-caption">Background context for energy costs. Bills depend on both usage and tariff.</p>
+        <div class="viz-mount">
+          <canvas id="chartSpotPrice" aria-label="Average spot power price trend" role="img"></canvas>
+        </div>
+        <p class="takeaway"><strong>Takeaway:</strong> Efficient TVs reduce the “usage” component, helpful regardless of price movements.</p>
       </div>
     </section>
 
-    <!-- About Us -->
+    <!-- About -->
     <section id="page-about" class="page" aria-labelledby="about-title">
-      <h1 id="about-title">About This Project</h1>
-      <p>
-        Built for <strong>COS30045 Data Visualisation</strong> as a small demo
-        using HTML, CSS, JavaScript, Git, and Vercel hosting.
-      </p>
+      <h1 id="about-title">About Us</h1>
       <div class="panel">
-        <h2>Student Info</h2>
-        <ul class="bullets">
-          <li><strong>Name:</strong> Kenneth</li>
-          <li><strong>Campus:</strong> Swinburne University of Technology (Sarawak)</li>
-          <li><strong>Unit:</strong> COS30045 T1</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>GenAI Acknowledgement</h2>
+        <h2>Project & Acknowledgements</h2>
         <p>
-          Portions of this code/content were assisted by GenAI. All outputs were
-          reviewed and adapted to meet assignment requirements.
+          Built for COS30045 (T03). This site presents a concise data story from the TV energy dataset and a
+          long-run context chart of spot power prices.
+        </p>
+        <h3>AI Declaration</h3>
+        <p>
+          GenAI assisted drafting text and code (HTML/CSS/JS). All outputs were reviewed and adapted by the student to
+          ensure correctness and alignment with unit requirements and data ethics.
         </p>
       </div>
     </section>
@@ -107,15 +99,12 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>
-      © <span id="year"></span> Kenneth · COS30045 · GenAI used for assistance.
-    </p>
+    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
   </footer>
 
+  <!-- App + Charts -->
   <script src="app.js"></script>
-
-  <!-- T04-2: load D3 then the D3-only script -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="energy-d3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="charts.js"></script>
 </body>
 </html>

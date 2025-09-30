@@ -1,33 +1,40 @@
-// Simple routing with hash + active nav feedback
-const routes = {
-  home: document.getElementById("page-home"),
-  televisions: document.getElementById("page-televisions"),
-  about: document.getElementById("page-about"),
-};
+// Simple SPA router + small UX hooks
+(function(){
+  const routes = {
+    home: document.getElementById('page-home'),
+    televisions: document.getElementById('page-televisions'),
+    about: document.getElementById('page-about')
+  };
 
-const links = document.querySelectorAll(".nav-link");
-const logoBtn = document.getElementById("logoBtn");
-const yearEl = document.getElementById("year");
+  const navLinks = Array.from(document.querySelectorAll('nav a[data-route]'));
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-function show(route) {
-  // Toggle pages
-  Object.entries(routes).forEach(([key, el]) => {
-    el.classList.toggle("is-visible", key === route);
-  });
-  // Active nav link
-  links.forEach(a => {
-    a.classList.toggle("is-active", a.dataset.route === route);
-  });
-}
+  function show(route){
+    // pages
+    Object.values(routes).forEach(sec => sec && sec.classList.remove('is-visible'));
+    const page = routes[route] || routes.home;
+    page.classList.add('is-visible');
 
-function parseRoute() {
-  const hash = (location.hash || "#home").replace("#", "").toLowerCase();
-  return routes[hash] ? hash : "home";
-}
+    // nav
+    navLinks.forEach(a => a.classList.remove('is-active'));
+    const active = navLinks.find(a => a.getAttribute('href') === `#${route}`);
+    if (active) active.classList.add('is-active');
 
-window.addEventListener("hashchange", () => show(parseRoute()));
-logoBtn.addEventListener("click", () => { location.hash = "#home"; });
-yearEl.textContent = new Date().getFullYear();
+    // announce
+    page.setAttribute('tabindex','-1');
+    page.focus({preventScroll:true});
+  }
 
-// Init
-show(parseRoute());
+  function onHashChange(){
+    const route = (location.hash || '#home').slice(1);
+    show(route);
+    // Let charts draw lazily when Televisions is opened
+    if (route === 'televisions' && window.drawT03Charts) {
+      window.drawT03Charts();
+    }
+  }
+
+  window.addEventListener('hashchange', onHashChange);
+  onHashChange(); // initial
+})();
