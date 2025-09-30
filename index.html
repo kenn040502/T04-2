@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Appliance Energy • Australia</title>
+  <link rel="icon" href="images/PowerIcon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Top Nav -->
+  <header class="site-header">
+    <nav class="topnav" aria-label="Primary">
+      <button id="logoBtn" class="logo-btn" aria-label="Go to Home">
+        <img src="images/PowerIcon.png" alt="Power logo" class="logo" />
+        <span class="brand">Appliance Energy</span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a data-route="home" class="nav-link is-active" href="#home">Home</a></li>
+        <li><a data-route="televisions" class="nav-link" href="#televisions">Televisions</a></li>
+        <li><a data-route="about" class="nav-link" href="#about">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content (SPA sections) -->
+  <main id="app" tabindex="-1">
+    <!-- Home -->
+    <section id="page-home" class="page is-visible" aria-labelledby="home-title">
+      <h1 id="home-title">Energy Smarts for Aussie Households ⚡</h1>
+      <p class="lede">
+        Welcome! This site demonstrates how <strong>appliance energy consumption</strong>
+        can be explored in the Australian market — starting with televisions.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h2>Why it matters</h2>
+          <p>
+            Appliances use a big share of household electricity. Choosing
+            efficient models lowers bills and emissions.
+          </p>
+        </article>
+        <article class="card">
+          <h2>How we’ll show it</h2>
+          <p>
+            We’ll use datasets from <em>data.gov.au</em> to show TV sizes,
+            technologies, star ratings, and power use.
+          </p>
+        </article>
+        <article class="card">
+          <h2>What’s coming</h2>
+          <p>
+            After cleaning data in KNIME (Task T01(b)), we’ll publish
+            visualisations here under the Televisions page.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Televisions -->
+    <section id="page-televisions" class="page" aria-labelledby="tv-title">
+      <h1 id="tv-title">Televisions • Energy Overview</h1>
+      <p class="lede">
+        Placeholder content for Australian television energy usage.
+        Charts and visualisations will be added after Task T01(b).
+      </p>
+      <div class="panel">
+        <h2>Planned Visualisations</h2>
+        <ul class="bullets">
+          <li>Screen technologies by frequency (LCD/LED, OLED, etc.)</li>
+          <li>Screen size distribution (bucketed to common sizes)</li>
+          <li>Average power by technology and brand</li>
+          <li>Screen size vs power usage</li>
+          <li>Star rating vs average screen size</li>
+        </ul>
+        <div id="viz-mount" class="viz-mount">
+          <div class="viz-placeholder">Charts will appear here soon.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="page-about" class="page" aria-labelledby="about-title">
+      <h1 id="about-title">About This Project</h1>
+      <p>
+        Built for <strong>COS30045 Data Visualisation</strong> as a small demo
+        using HTML, CSS, JavaScript, Git, and Vercel hosting.
+      </p>
+      <div class="panel">
+        <h2>Student Info</h2>
+        <ul class="bullets">
+          <li><strong>Name:</strong> Kenneth</li>
+          <li><strong>Campus:</strong> Swinburne University of Technology (Sarawak)</li>
+          <li><strong>Unit:</strong> COS30045 T1</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>GenAI Acknowledgement</h2>
+        <p>
+          Portions of this code/content were assisted by GenAI. All outputs were
+          reviewed and adapted to meet assignment requirements.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> Kenneth · COS30045 · GenAI used for assistance.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

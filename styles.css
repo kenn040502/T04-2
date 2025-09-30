@@ -1,0 +1,135 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --muted: #94a3b8;
+  --text: #e5e7eb;
+  --brand: #22c55e;
+  --brand-700: #15803d;
+  --brand-950: #052e16;
+  --hover: #1f2937;
+  --card: #0b1220;
+  --border: #1f2937;
+  --focus: #60a5fa;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, var(--brand-950), var(--bg) 40%);
+}
+
+/* Nav */
+.site-header {
+  position: sticky; 
+  top: 0; 
+  z-index: 10;
+  background: rgba(15,23,42,0.75);
+  border-bottom: 1px solid var(--border);
+}
+.topnav {
+  display: flex; 
+  align-items: center;
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 10px 16px;
+}
+
+.logo-btn {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
+  background: transparent; 
+  border: 0; 
+  cursor: pointer; 
+  padding: 6px 8px; 
+  border-radius: 12px;
+}
+
+.logo-btn:hover { 
+  background: var(--hover); 
+}
+
+.logo { 
+  width: 28px; 
+  height: 28px;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.nav-links { 
+  list-style: none; 
+  margin-left: auto; 
+  display: flex; 
+  gap: 6px; 
+  padding: 0; 
+}
+
+.nav-link {
+  padding: 8px 12px; 
+  border-radius: 10px;
+  color: var(--text); 
+  text-decoration: none;
+  transition: transform .06s, background .2s;
+}
+
+.nav-link:hover { 
+  background: var(--hover);
+  transform: translateY(-1px);
+}
+
+.nav-link.is-active {
+  background: var(--brand-700); 
+  color: #fff;
+}
+
+/* Main */
+main {
+  max-width: 1100px; 
+  margin: 24px auto;
+  padding: 0 16px 48px;
+}
+
+.page {
+  display: none; 
+}
+
+.page.is-visible { 
+  display: block;
+ }
+
+.cards { 
+  display: grid; 
+  gap: 12px; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+}
+
+.card, .panel {
+  background: linear-gradient(180deg, var(--card), var(--panel));
+  border: 1px solid var(--border);
+  border-radius: 14px; 
+  padding: 14px;
+}
+.viz-mount {
+  display: grid; 
+  place-items: center;
+  min-height: 160px; 
+  border: 1px dashed var(--border); 
+  border-radius: 12px; 
+  margin-top: 10px;
+}
+
+.viz-placeholder { 
+  color: var(--muted); 
+  font-style: italic; 
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 14px 16px; 
+  text-align: center; 
+  color: var(--muted);
+}
