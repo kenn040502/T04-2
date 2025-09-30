@@ -21,6 +21,13 @@
     </nav>
   </header>
 
+  <!-- T04-2 D3 playground (exactly one h1, one div, one svg) -->
+  <h1>Appliance Energy Consumption</h1>
+  <div id="content"></div>
+  <!-- Give the SVG a size so shapes can be seen -->
+  <svg width="300" height="150"></svg>
+
+
   <!-- Pages -->
   <main>
     <!-- Home -->
@@ -106,5 +113,8 @@
   <script src="app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="charts.js"></script>
+    <!-- T04-2 scripts: load D3 first, then our D3-only code -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="energy-d3.js"></script>
 </body>
 </html>
