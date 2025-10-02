@@ -72,3 +72,10 @@ canvas{ width:100% !important; height:360px !important; display:block; }
   background: #0c1427;
 }
 .img-caption { color: var(--muted, #9ca3af); font-size: 0.9rem; margin-top: 6px; }
+
+/* T04-3: Responsive SVG container */
+.responsive-svg-container {
+  margin: 0 auto;     /* center horizontally */
+  width: 100%;        /* fill parent */
+  max-width: 1200px;  /* cap size */
+}
