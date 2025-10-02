@@ -60,3 +60,15 @@ h3{ font-size:1rem; margin:1rem 0 .5rem; }
 
 /* Canvas sizing */
 canvas{ width:100% !important; height:360px !important; display:block; }
+
+/* Static chart images presentation */
+.viz-figure { margin: 8px 0 6px; }
+.viz-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #18223a;   /* adjust to your theme */
+  border-radius: 12px;
+  background: #0c1427;
+}
+.img-caption { color: var(--muted, #9ca3af); font-size: 0.9rem; margin-top: 6px; }
