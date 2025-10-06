@@ -37,32 +37,78 @@ nav a.is-active{ color:white; background:#123057; outline:1px solid #264a83; }
 main{ max-width:1000px; margin:32px auto; padding:0 16px; }
 .page{ display:none; }
 .page.is-visible{ display:block; animation:fade .25s ease-out; }
-@keyframes fade{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none} }
+@keyframes fade{ 
+  from{
+    opacity:0; 
+    transform:translateY(6px)} to{opacity:1; 
+    transform:none} }
 
-h1{ font-size:1.8rem; margin:.2rem 0 1rem; }
-h2{ font-size:1.2rem; margin:0 0 .6rem; }
-h3{ font-size:1rem; margin:1rem 0 .5rem; }
-.lede{ color:var(--muted); margin:.25rem 0 1rem; }
+h1{ 
+  font-size:1.8rem; 
+  margin:.2rem 0 1rem; 
+}
+
+h2{ 
+  font-size:1.2rem; 
+  margin:0 0 .6rem; 
+}
+
+h3{ 
+  font-size:1rem; 
+  margin:1rem 0 .5rem; 
+}
+
+.lede{ 
+  color:var(--muted); 
+  margin:.25rem 0 1rem; 
+}
 
 .panel{
-  background:var(--panel); border:1px solid var(--border);
-  border-radius:14px; padding:16px 18px; box-shadow:0 10px 32px var(--shadow);
+  background:var(--panel); 
+  border:1px solid var(--border);
+  border-radius:14px; 
+  padding:16px 18px; 
+  box-shadow:0 10px 32px var(--shadow);
   margin:16px 0 22px;
 }
-.viz-mount{ background:#0c1427; border:1px solid #18223a; border-radius:12px; padding:12px; }
-.viz-caption{ color:var(--muted); margin:6px 0 10px; }
-.takeaway{ margin:10px 0 0; }
-.bullets{ margin:.3rem 0 .2rem 1.2rem; }
+
+.viz-mount{ background:#0c1427; 
+  border:1px solid #18223a; 
+  border-radius:12px; 
+  padding:12px; 
+}
+
+.viz-caption{ 
+  color:var(--muted); 
+  margin:6px 0 10px;
+ }
+
+.takeaway{ 
+  margin:10px 0 0; 
+}
+
+.bullets{ 
+  margin:.3rem 0 .2rem 1.2rem; 
+}
 
 .site-footer{
-  margin:48px 0 18px; text-align:center; color:var(--muted); font-size:.9rem;
+  margin:48px 0 18px; 
+  text-align: center; 
+  color:var(--muted); 
+  font-size:.9rem;
 }
 
 /* Canvas sizing */
-canvas{ width:100% !important; height:360px !important; display:block; }
+canvas{ width:100% !important; 
+  height:360px !important; 
+  display:block; 
+}
 
 /* Static chart images presentation */
-.viz-figure { margin: 8px 0 6px; }
+.viz-figure { 
+  margin: 8px 0 6px; 
+}
+
 .viz-figure img {
   width: 100%;
   height: auto;
@@ -82,5 +128,16 @@ canvas{ width:100% !important; height:360px !important; display:block; }
 
 
 /* Optional tiny polish */
-.row .bar { opacity: .95; }
-.row:hover .bar { opacity: 1; }
+.row .bar { 
+  opacity: .95; 
+}
+
+.row:hover .bar { 
+  opacity: 1; 
+}
+
+nav a[aria-current="page"]{
+  color:white;
+  background:#123057;
+  outline:1px solid #264a83;
+}
