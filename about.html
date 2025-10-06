@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>COS30045 – Appliance Energy (T01/T02) · About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="images/PowerIcon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+<a href="index.html" class="brand" aria-label="Go to Home">
+<img src="images/PowerIcon.png" alt="" class="logo" />
+<span>Appliance Energy</span>
+</a>
+<nav aria-label="Primary">
+<a href="index.html">Home</a>
+<a href="televisions.html">Televisions</a>
+<a href="about.html">About Us</a>
+</nav>
+</header>
+
+
+<main>
+<section aria-labelledby="about-title">
+<h1 id="about-title">About this project</h1>
+<div class="panel">
+<h2>Purpose</h2>
+<p>Supports COS30045 T01/T02 assessments. T01(a): hosted site & layout; T01(b): KNIME data processing; T02: charts responding to Q1–Q6.</p>
+</div>
+<div class="panel">
+<h2>Data sources & limitations</h2>
+<ul class="bullets">
+<li>TV energy data: Australian Government Energy Rating database (unit practical snapshot).</li>
+<li>Units: active power (W); annual energy (kWh/year) where shown.</li>
+<li>Aggregations: means by technology/size; results vary by brand/model features.</li>
+<li>Limitations: dataset may lag newest models; usage patterns not captured.</li>
+</ul>
+</div>
+<div class="panel">
+<h2>AI declaration</h2>
+<p>Generative AI was used for code review, layout scaffolding, and wording refinement. All outputs were verified and edited for accuracy and alignment with unit requirements.</p>
+</div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
+</footer>
+
+
+<script src="app.js" defer></script>
+</body>
+</html>

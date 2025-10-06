@@ -1,163 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>COS30045 – Appliance Energy (T03)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="images/PowerIcon.png" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8" />
+<title>COS30045 – Appliance Energy (T01/T02)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="images/PowerIcon.png" />
+<link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- Top Nav -->
-  <header class="topbar">
-    <a href="#home" class="brand" aria-label="Go to Home">
-      <img src="images/PowerIcon.png" alt="" class="logo" />
-      <span>Appliance Energy</span>
-    </a>
-    <nav aria-label="Primary">
-      <a href="#home" data-route>Home</a>
-      <a href="#televisions" data-route>Televisions</a>
-      <a href="#about" data-route>About Us</a>
-    </nav>
-  </header>
+<!-- Top Nav (same classes) -->
+<header class="topbar">
+<a href="index.html" class="brand" aria-label="Go to Home">
+<img src="images/PowerIcon.png" alt="" class="logo" />
+<span>Appliance Energy</span>
+</a>
+<nav aria-label="Primary">
+<a href="index.html">Home</a>
+<a href="televisions.html">Televisions</a>
+<a href="about.html">About Us</a>
+</nav>
+</header>
 
-  <!-- === T04-2 D3 DEMO BLOCK (new) === -->
-  <h1>Appliance Energy Consumption</h1>
-  <div id="content"></div>
-  <svg width="300" height="150"></svg>
-  <!-- === End T04-2 D3 DEMO === -->
 
-  <!-- Pages -->
-  <main>
-    <!-- Home -->
-    <section id="page-home" class="page is-visible" aria-labelledby="home-title">
-      <h1 id="home-title">Welcome</h1>
-      <p class="lede">
-        This small site communicates insights from a TV energy consumption dataset for a general audience of
-        Australian households. Use the <strong>Televisions</strong> page for charts and takeaways.
-      </p>
-      <div class="panel">
-        <h2>What’s on this site?</h2>
-        <ul class="bullets">
-          <li>Simple visual story about TV energy consumption</li>
-          <li>Clear audience and questions</li>
-          <li>Lightweight charts with short explanations</li>
-        </ul>
-      </div>
-    </section>
-
-<!-- Televisions -->
-<section id="page-televisions" class="page" aria-labelledby="tv-title">
-  <h1 id="tv-title">Televisions • Energy Insights</h1>
-  <p class="lede">
-    Audience: <strong>Households considering a new TV</strong>. These six charts (Q1–Q6) summarise key findings from the
-    Energy Rating dataset. Each image is accompanied by a brief, plain-language takeaway.
-  </p>
-
-  <!-- Q1 -->
-  <div class="panel">
-    <h2 id="q1">Q1. Which TV screen technologies are most common?</h2>
-    <p class="viz-caption">Distribution of models by screen technology in the Australian market.</p>
-    <figure class="viz-figure">
-      <img src="images/Q1.png" alt="Share of TV models by screen technology (e.g., LED/LCD, OLED, QLED, Mini-LED)" loading="lazy">
-      <figcaption class="img-caption">Q1. Screen technology mix (share of models)</figcaption>
-    </figure>
-    <p class="takeaway"><strong>Takeaway:</strong> LED/LCD dominates; OLED, QLED and Mini-LED make up smaller shares.</p>
-  </div>
-
-  <!-- Q2 -->
-  <div class="panel">
-    <h2 id="q2">Q2. What screen sizes are available and which are most frequent?</h2>
-    <p class="viz-caption">Frequency of models grouped into common diagonal size buckets.</p>
-    <figure class="viz-figure">
-      <img src="images/Q2.png" alt="Bar chart of TV size buckets showing which sizes are most common" loading="lazy">
-      <figcaption class="img-caption">Q2. TV size distribution</figcaption>
-    </figure>
-    <p class="takeaway"><strong>Takeaway:</strong> 55″ models are typically most common; other sizes appear less often.</p>
-  </div>
-
-  <!-- Q3 -->
-  <div class="panel">
-    <h2 id="q3">Q3. Which brands have the greatest number of models?</h2>
-    <p class="viz-caption">Count of distinct models by brand.</p>
-    <figure class="viz-figure">
-      <img src="images/Q3.png" alt="Chart showing number of models per brand, highlighting leading brands" loading="lazy">
-      <figcaption class="img-caption">Q3. Model counts by brand</figcaption>
-    </figure>
-    <p class="takeaway"><strong>Takeaway:</strong> A few major brands lead in model variety; others contribute smaller ranges.</p>
-  </div>
-
-  <!-- Q4 -->
-  <div class="panel">
-    <h2 id="q4">Q4. Which technology consumes the least power?</h2>
-    <p class="viz-caption">Average active power (W) across screen technologies.</p>
-    <figure class="viz-figure">
-      <img src="images/Q4.png" alt="Bar chart comparing average power by technology; lower bars mean lower energy use" loading="lazy">
-      <figcaption class="img-caption">Q4. Average power (W) by technology</figcaption>
-    </figure>
-    <p class="takeaway"><strong>Takeaway:</strong> LCD/LED often lowest on average; premium panels vary by model and features.</p>
-  </div>
-
-  <!-- Q5 -->
-  <div class="panel">
-    <h2 id="q5">Q5. What is the relationship between screen size and power use?</h2>
-    <p class="viz-caption">Scatter of screen size (inches) vs average power (W).</p>
-    <figure class="viz-figure">
-      <img src="images/Q5.png" alt="Scatter plot showing that larger screens generally use more power" loading="lazy">
-      <figcaption class="img-caption">Q5. Bigger screens → generally higher power</figcaption>
-    </figure>
-    <p class="takeaway"><strong>Takeaway:</strong> Power tends to rise with size, though efficiency varies by brand/tech.</p>
-  </div>
-
-  <!-- Q6 -->
-  <div class="panel">
-    <h2 id="q6">Q6. What is the relationship between star rating and screen size?</h2>
-    <p class="viz-caption">Distribution of sizes across star ratings (e.g., box plots).</p>
-    <figure class="viz-figure">
-      <img src="images/Q6.png" alt="Box plots per star rating showing size distributions" loading="lazy">
-      <figcaption class="img-caption">Q6. Screen size distributions across star ratings</figcaption>
-    </figure>
-    <p class="takeaway"><strong>Takeaway:</strong> High star ratings appear across popular sizes; efficiency depends on both size and technology.</p>
-  </div>
+<!-- Page content (moved from #page-home) -->
+<main>
+<section aria-labelledby="home-title">
+<h1 id="home-title">Welcome</h1>
+<p class="lede">
+This small site communicates insights from a TV energy consumption dataset for a general audience of
+Australian households. Use the <strong>Televisions</strong> page for charts and takeaways.
+</p>
+<div class="panel">
+<h2>What’s on this site?</h2>
+<ul class="bullets">
+<li>Simple visual story about TV energy consumption</li>
+<li>Clear audience and questions</li>
+<li>Lightweight charts with short explanations</li>
+</ul>
+</div>
 </section>
+</main>
 
 
-    <!-- About -->
-    <section id="page-about" class="page" aria-labelledby="about-title">
-      <h1 id="about-title">About Us</h1>
-      <div class="panel">
-        <h2>Project & Acknowledgements</h2>
-        <p>
-          Built for COS30045 (T03). This site presents a concise data story from the TV energy dataset and a
-          long-run context chart of spot power prices.
-        </p>
-        <h3>AI Declaration</h3>
-        <p>
-          GenAI assisted drafting text and code (HTML/CSS/JS). All outputs were reviewed and adapted by the student to
-          ensure correctness and alignment with unit requirements and data ethics.
-        </p>
-      </div>
-    </section>
-  </main>
+<!-- Footer (same markup/classes) -->
+<footer class="site-footer">
+<p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
+</footer>
 
-  <!-- === NEW: T04-3 Responsive SVG container === -->
-  <div class="responsive-svg-container"></div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
-  </footer>
-
-  <!-- Existing scripts -->
-  <script src="app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="charts.js"></script>
-
-  <!-- D3 library -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <!-- NEW: JS for T04-3 only -->
-  <script src="t04-3-bars.js"></script>
-  <!-- Old T04-2 demo disabled -->
-  <!-- <script src="energy-d3.js"></script> -->
+<script src="app.js" defer></script>
 </body>
+</html>
