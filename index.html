@@ -1,53 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>COS30045 – Appliance Energy (T01/T02)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="images/PowerIcon.png" />
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COS30045 – T04-2 · Appliance Energy Consumption</title>
+
+  <!-- (optional) keep your favicon if you have it -->
+  <link rel="icon" href="images/PowerIcon.png" />
+
+  <!-- keep using your existing stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<!-- Top Nav (same classes) -->
-<header class="topbar">
-<a href="index.html" class="brand" aria-label="Go to Home">
-<img src="images/PowerIcon.png" alt="" class="logo" />
-<span>Appliance Energy</span>
-</a>
-<nav aria-label="Primary">
-<a href="index.html">Home</a>
-<a href="televisions.html">Televisions</a>
-<a href="about.html">About Us</a>
-</nav>
-</header>
+  <!-- =========================
+       HEADER / NAV (unchanged)
+       ========================= -->
+  <header class="topbar">
+    <a href="index.html" class="brand" aria-label="Go to Home">
+      <img src="images/PowerIcon.png" alt="" class="logo" />
+      <span>Appliance Energy</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="televisions.html">Televisions</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
 
+  <!-- =========================
+       D3 PLAYGROUND (Step 1)
+       ========================= -->
+  <main>
+    <!-- Exactly one h1, one div, one svg for D3 -->
+    <h1>Appliance Energy Consumption</h1>
 
-<!-- Page content (moved from #page-home) -->
-<main>
-<section aria-labelledby="home-title">
-<h1 id="home-title">Welcome</h1>
-<p class="lede">
-This small site communicates insights from a TV energy consumption dataset for a general audience of
-Australian households. Use the <strong>Televisions</strong> page for charts and takeaways.
-</p>
-<div class="panel">
-<h2>What’s on this site?</h2>
-<ul class="bullets">
-<li>Simple visual story about TV energy consumption</li>
-<li>Clear audience and questions</li>
-<li>Lightweight charts with short explanations</li>
-</ul>
-</div>
-</section>
-</main>
+    <div id="content"></div>
 
+    <!-- Give the SVG a size so shapes can be seen -->
+    <svg width="300" height="150"></svg>
+  </main>
 
-<!-- Footer (same markup/classes) -->
-<footer class="site-footer">
-<p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
-</footer>
+  <!-- (optional) your footer if you have one -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Kenneth Chua — COS30045 T04-2</p>
+  </footer>
 
+  <!-- =========================
+       SCRIPTS (Step 1 & 2)
+       Load D3 first, then your D3 code
+       ========================= -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="energy-d3.js"></script>
 
-<script src="app.js" defer></script>
+  <!-- (optional) tiny util to set current year -->
+  <script>
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
