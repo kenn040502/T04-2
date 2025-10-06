@@ -3,16 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>COS30045 – T04-4 · Appliance Energy Consumption</title>
+  <title>COS30045 – T04-5 · Appliance Energy Consumption</title>
 
-  <!-- Keep your favicon and stylesheet paths as in your project -->
   <link rel="icon" href="images/PowerIcon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- =========================
-       HEADER / NAV (unchanged)
-       ========================= -->
+  <!-- ===== HEADER / NAV (keep yours) ===== -->
   <header class="topbar">
     <a href="index.html" class="brand" aria-label="Go to Home">
       <img src="images/PowerIcon.png" alt="" class="logo" />
@@ -25,37 +22,28 @@
     </nav>
   </header>
 
-  <!-- =========================
-       MAIN CONTENT
-       ========================= -->
   <main>
-    <!-- T04-2 playground (keep as-is) -->
+    <!-- T04-2 content you already had -->
     <h1>Appliance Energy Consumption</h1>
     <div id="content"></div>
     <svg width="300" height="150"></svg>
 
-    <!-- T04-4/T04-5: responsive chart area -->
+    <!-- Responsive container for T04-4/5 chart -->
     <div class="responsive-svg-container" aria-label="T04-4/T04-5 chart area"></div>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span>Kenneth Chua — Built for COS30045. GenAI used with acknowledgement</p>
+    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement</p>
   </footer>
 
-  <!-- =========================
-       SCRIPTS (T04-4)
-       ========================= -->
-  <!-- D3 library -->
+  <!-- ===== SCRIPTS (order matters) ===== -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-
-  <!-- NEW: T04-4 CSV loader (creates data array, logs checks, calls createBarChart stub) -->
-  <script src="t04-4-load.js"></script>
-
-  <!-- Old demos disabled while focusing on T04-4 -->
+  <script src="t04-4-load.js"></script>   <!-- loads CSV then calls createBarChart(data) -->
+  <script src="t04-5-bars.js"></script>   <!-- defines window.createBarChart -->
+  <!-- Old demos disabled while focusing on T04-4/5 -->
   <!-- <script src="energy-d3.js"></script> -->
   <!-- <script src="t04-3-bars.js"></script> -->
 
-  <!-- tiny util to set current year -->
   <script>
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
