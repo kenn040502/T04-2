@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>COS30045 – T04-3 · Appliance Energy Consumption</title>
+  <title>COS30045 – T04-4 · Appliance Energy Consumption</title>
 
   <!-- Keep your favicon and stylesheet paths as in your project -->
   <link rel="icon" href="images/PowerIcon.png" />
@@ -26,36 +26,34 @@
   </header>
 
   <!-- =========================
-       EXISTING T04-2 CONTENT
-       (keep as-is)
+       MAIN CONTENT
        ========================= -->
   <main>
-    <!-- Exactly one h1, one div, one svg from T04-2 -->
+    <!-- T04-2 playground (keep as-is) -->
     <h1>Appliance Energy Consumption</h1>
     <div id="content"></div>
     <svg width="300" height="150"></svg>
 
-    <!-- =========================
-         NEW: Responsive container for T04-3 chart
-         ========================= -->
-    <div class="responsive-svg-container" aria-label="T04-3 chart area"></div>
+    <!-- T04-4/T04-5: responsive chart area -->
+    <div class="responsive-svg-container" aria-label="T04-4/T04-5 chart area"></div>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
+    <p>© <span id="year"></span>Kenneth Chua — Built for COS30045. GenAI used with acknowledgement</p>
   </footer>
 
   <!-- =========================
-       SCRIPTS
+       SCRIPTS (T04-4)
        ========================= -->
   <!-- D3 library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
-  <!-- NEW: T04-3 bar chart setup -->
-  <script src="t04-3-bars.js"></script>
+  <!-- NEW: T04-4 CSV loader (creates data array, logs checks, calls createBarChart stub) -->
+  <script src="t04-4-load.js"></script>
 
-  <!-- Old T04-2 demo (temporarily disabled so both don’t run) -->
+  <!-- Old demos disabled while focusing on T04-4 -->
   <!-- <script src="energy-d3.js"></script> -->
+  <!-- <script src="t04-3-bars.js"></script> -->
 
   <!-- tiny util to set current year -->
   <script>
