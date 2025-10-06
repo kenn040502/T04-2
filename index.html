@@ -3,12 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>COS30045 – T04-2 · Appliance Energy Consumption</title>
+  <title>COS30045 – T04-3 · Appliance Energy Consumption</title>
 
-  <!-- (optional) keep your favicon if you have it -->
+  <!-- Keep your favicon and stylesheet paths as in your project -->
   <link rel="icon" href="images/PowerIcon.png" />
-
-  <!-- keep using your existing stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,31 +26,38 @@
   </header>
 
   <!-- =========================
-       D3 PLAYGROUND (Step 1)
+       EXISTING T04-2 CONTENT
+       (keep as-is)
        ========================= -->
   <main>
-    <!-- Exactly one h1, one div, one svg for D3 -->
+    <!-- Exactly one h1, one div, one svg from T04-2 -->
     <h1>Appliance Energy Consumption</h1>
-
     <div id="content"></div>
-
-    <!-- Give the SVG a size so shapes can be seen -->
     <svg width="300" height="150"></svg>
+
+    <!-- =========================
+         NEW: Responsive container for T04-3 chart
+         ========================= -->
+    <div class="responsive-svg-container" aria-label="T04-3 chart area"></div>
   </main>
 
-  <!-- (optional) your footer if you have one -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Kenneth Chua — COS30045 T04-2</p>
+    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
   </footer>
 
   <!-- =========================
-       SCRIPTS (Step 1 & 2)
-       Load D3 first, then your D3 code
+       SCRIPTS
        ========================= -->
+  <!-- D3 library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="energy-d3.js"></script>
 
-  <!-- (optional) tiny util to set current year -->
+  <!-- NEW: T04-3 bar chart setup -->
+  <script src="t04-3-bars.js"></script>
+
+  <!-- Old T04-2 demo (temporarily disabled so both don’t run) -->
+  <!-- <script src="energy-d3.js"></script> -->
+
+  <!-- tiny util to set current year -->
   <script>
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();

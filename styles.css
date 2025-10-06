@@ -79,3 +79,10 @@ canvas{ width:100% !important; height:360px !important; display:block; }
   width: 100%;        /* fill parent */
   max-width: 1200px;  /* cap size */
 }
+
+/* T04-3: make the SVG area responsive */
+.responsive-svg-container {
+  margin: 0 auto;       /* center within the page layout */
+  width: 100%;          /* fill the parent width */
+  max-width: 1200px;    /* cap max width for big screens */
+}
