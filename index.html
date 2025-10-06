@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>COS30045 – T04-5 · Appliance Energy Consumption</title>
+  <title>COS30045 – T04-7 · Appliance Energy Consumption</title>
 
   <link rel="icon" href="images/PowerIcon.png" />
   <link rel="stylesheet" href="styles.css" />
@@ -23,24 +23,24 @@
   </header>
 
   <main>
-    <!-- T04-2 content you already had -->
+    <!-- T04-2 content (optional, keep if you like) -->
     <h1>Appliance Energy Consumption</h1>
     <div id="content"></div>
     <svg width="300" height="150"></svg>
 
-    <!-- Responsive container for T04-4/5 chart -->
-    <div class="responsive-svg-container" aria-label="T04-4/T04-5 chart area"></div>
+    <!-- Responsive container for T04-4/5/6/7 chart -->
+    <div class="responsive-svg-container" aria-label="Brand count bar chart"></div>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement</p>
+    <p>© <span id="year"></span> Kenneth Chua — Built for COS30045. GenAI used with acknowledgement.</p>
   </footer>
 
   <!-- ===== SCRIPTS (order matters) ===== -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="t04-4-load.js"></script>   <!-- loads CSV then calls createBarChart(data) -->
-  <script src="t04-5-bars.js"></script>   <!-- defines window.createBarChart -->
-  <!-- Old demos disabled while focusing on T04-4/5 -->
+  <script src="t04-4-load.js"></script>   <!-- loads CSV then calls window.createBarChart(data) -->
+  <script src="t04-5-bars.js"></script>   <!-- defines window.createBarChart (T04-7 version) -->
+  <!-- Old demos disabled while focusing on T04-4/7 -->
   <!-- <script src="energy-d3.js"></script> -->
   <!-- <script src="t04-3-bars.js"></script> -->
 
